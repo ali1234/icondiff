@@ -1,7 +1,6 @@
 import argparse
 import subprocess
 import pathlib
-import itertools
 
 bootstrap_path = pathlib.Path(__file__).parent / 'css' / 'bootstrap.min.css'
 

@@ -19,7 +19,7 @@ by side.
 The ```-a``` option will cause diff.html to show all png files. This is
 implicit if you specify only one commit.
 
-Quickly open the ```diff.html`````:
+Quickly open the ```diff.html```:
 
     xdg-open diff.html
 
