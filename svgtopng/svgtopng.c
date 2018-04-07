@@ -59,8 +59,9 @@ svgtopng (const gchar *src)
   g_free (basename);
   if (icon_size == 0)
     {
-      g_message ("Unable to extract icon size from directory name %s", src);
-      return;
+      icon_size = 64;
+      //g_message ("Unable to extract icon size from directory name %s", src);
+      //return;
     }
 
   tmp = g_strndup (src, strlen (src) - 3);
