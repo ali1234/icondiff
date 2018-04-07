@@ -50,7 +50,7 @@ def diff_paths(paths):
 
 
 def diff_pngs(dirs, all=False):
-    it = sorted(list(scan_dirs(dirs)))
+    it = sorted(list(set(scan_dirs(dirs))))
     if all:
         yield from it
         return
