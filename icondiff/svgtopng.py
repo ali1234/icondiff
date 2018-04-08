@@ -34,7 +34,12 @@ def svgtopng(filename, default_size=64, force_default_size=False):
     pix = GdkPixbuf.Pixbuf.new_from_file (str(path))
     if pix:
         if GdkPixbuf.Pixbuf.get_width(pix) > size or GdkPixbuf.Pixbuf.get_height(pix) > size:
-            raise Exception('Size is too big: {}'.format(path))
+            raise Exception('Size is too big: expected {}x{}, got {}x{} in {}'.format(
+                size, size,
+                GdkPixbuf.Pixbuf.get_width(pix),
+                GdkPixbuf.Pixbuf.get_height(pix),
+                path,
+            ))
 
         if not GdkPixbuf.Pixbuf.savev(pix, str(dest), "png", [], []):
             raise Exception('Could not save file: {}'.format(dest))
