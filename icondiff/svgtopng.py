@@ -51,7 +51,7 @@ def svgtopng(filename, default_size=64, force_default_size=False):
 def main():
     import sys
     for filename in sys.argv[1:]:
-        svgtopng(filename)
+        svgtopng(filename, default_size=None)
 
 if __name__ == '__main__':
     main()
