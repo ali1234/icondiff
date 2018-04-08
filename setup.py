@@ -12,7 +12,8 @@ setup(
     packages=['icondiff'],
     entry_points={
         'console_scripts': [
-            'icondiff = icondiff.__main__:main'
+            'icondiff = icondiff.__main__:main',
+            #'svgtopng = icondiff.svgtong:main',
         ]
     },
     package_data={'icondiff': ['css/bootstrap.min.css']},

@@ -2,6 +2,8 @@ import argparse
 import subprocess
 import pathlib
 
+from icondiff.svgtopng import svgtopng
+
 bootstrap_path = pathlib.Path(__file__).parent / 'css' / 'bootstrap.min.css'
 
 
@@ -18,9 +20,10 @@ def gen_pngs(dir):
     print('Generating pngs for', path)
     for child in path.iterdir():
         if not child.is_symlink() and child.suffix == '.svg':
-            subprocess.check_call([
-                'svgtopng', str(child)
-            ])
+            try:
+                svgtopng(child)
+            except Exception as e:
+                print('File skipped:', e)
         elif child.is_dir():
             gen_pngs(child)
 
